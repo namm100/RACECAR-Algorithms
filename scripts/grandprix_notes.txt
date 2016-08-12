@@ -1,0 +1,10 @@
+Topic name /target_info - blob_detection
+Potential Field for everything.
+but:
+In shortcut, wall follow
+Blob detect the color of the paper.
+Green -> shortcut open
+Red -> shortcut closed
+Always take left wall in shortcut
+Switch to right wall if shortcut closed
+

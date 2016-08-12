@@ -1,0 +1,20 @@
+<!-- -*- mode: XML -*- -->
+<launch>
+	<arg name"=racecar_version" default="racecar-v2" />
+	
+	<include file="$(racecar_gazebo)/launch/racecar_walker.launch" />
+	<node name="potential_field_node" pkg="racecar_63" type="potential_field.py"/>
+		<param name="push_multiplier" value="15.5" />
+		<param name="steer_grad_proportion" value="900.0" />
+		<param name="speed_grad_proportion" value="-0.001" />
+		<param name="momentum_mu" value="0.94" />
+		<param name="update_influence" value="0.085" />
+		<param name="min_speed_clamp" value="-0.7" />
+		<param name="max_speed_clamp" value='2" />
+		<param name="reverse_speed_multiplier" value="-2.3" />
+	
+	<node name="blob_detection_node" pkg="racecar_63" type="color_two.py" />
+	<node name="grand_prix_node" pkg="racecar_63" type="master_node.py" />
+	<node name="object_detector_node" pkg="racecar_63" type="wall_detector.py" />
+</launch>
+
